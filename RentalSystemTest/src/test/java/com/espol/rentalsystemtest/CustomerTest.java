@@ -5,12 +5,13 @@
  */
 package com.espol.rentalsystemtest;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -20,53 +21,61 @@ public class CustomerTest {
     
     public CustomerTest() {
     }
-
-    @BeforeAll
+    
+    @BeforeClass
     public static void setUpClass() {
     }
     
-    @AfterAll
+    @AfterClass
     public static void tearDownClass() {
     }
     
-    @BeforeEach
+    @Before
     public void setUp() {
     }
     
-    @AfterEach
+    @After
     public void tearDown() {
     }
 
     /**
      * Test of addMovieRental method, of class Customer.
      */
-    @org.junit.jupiter.api.Test
+    @Test
     public void testAddMovieRental() {
-        System.out.println("addMovieRental");
-        MovieRental arg = null;
-        Customer instance = null;
+        //creacion de instancias necesaria para la prueba
+        MovieRental arg = new MovieRental(new Movie("titulo", Movie.CHILDRENS), 2);
+        Customer instance = new Customer("c1");
+        ArrayList<MovieRental> copy = (ArrayList<MovieRental>) instance.getMovieRentals().clone();
+        
+        //realizacion de la prueba 
         instance.addMovieRental(arg);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        copy.add(arg);
+        
+        assertEquals(copy, instance.getMovieRentals());
     }
 
     /**
      * Test of addVideoGameRental method, of class Customer.
      */
-    @org.junit.jupiter.api.Test
+    @Test
     public void testAddVideoGameRental() {
-        System.out.println("addVideoGameRental");
-        VideoGameRental arg = null;
-        Customer instance = null;
+        //creacion de instancias necesaria para la prueba
+        VideoGameRental arg = new VideoGameRental(new WiiGame("ELMARIO"), 10, true);
+        Customer instance = new Customer("c1");
+        ArrayList<VideoGameRental> copy = (ArrayList<VideoGameRental>) instance.getMovieRentals().clone();
+        
+        //realizacion de la prueba 
         instance.addVideoGameRental(arg);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        copy.add(arg);
+        
+        assertEquals(copy, instance.getVideoGameRental());
     }
 
     /**
      * Test of statement method, of class Customer.
      */
-    @org.junit.jupiter.api.Test
+    @Test
     public void testStatement() {
         System.out.println("statement");
         Customer instance = null;
@@ -77,4 +86,33 @@ public class CustomerTest {
         fail("The test case is a prototype.");
     }
     
+    
+    
+    /**
+     * Test of getMovieRentals method, of class Customer.
+     */
+    @Test
+    public void testGetMovieRentals() {
+        System.out.println("getMovieRentals");
+        Customer instance = null;
+        ArrayList<MovieRental> expResult = null;
+        ArrayList<MovieRental> result = instance.getMovieRentals();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getVideoGameRental method, of class Customer.
+     */
+    @Test
+    public void testGetVideoGameRental() {
+        System.out.println("getVideoGameRental");
+        Customer instance = null;
+        ArrayList<VideoGameRental> expResult = null;
+        ArrayList<VideoGameRental> result = instance.getVideoGameRental();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
 }

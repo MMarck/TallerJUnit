@@ -49,7 +49,7 @@ class Customer {
                     if (mov.getDaysRented() > 3)
                         thisAmount += (mov.getDaysRented() - 3) * 1.25;
                     break;
-            }
+            }//total test case: 2+2* 3 + 1.5 (dias rentados 2,2,3)
             // add frequent renter points
             frequentRenterPoints++;
 
@@ -78,4 +78,13 @@ class Customer {
                 + " frequent renter points";
         return result;
     }
+    
+    public ArrayList<MovieRental> getMovieRentals() {
+        return _movieRentals;
+    }
+
+    public ArrayList<VideoGameRental> getVideoGameRental() {
+        return _videoGameRental;
+    }
+
 }

@@ -60,20 +60,7 @@ public class MovieTest {
         instance.setPriceCode(arg);
         assertEquals(arg, instance.getPriceCode());
     }
-    
-    @Test
-    public void testCambiarPrecios() {
-        System.out.println("getPriceCode");
-        Movie instance = new Movie("Over the moon", Movie.CHILDRENS);
-        int expResult = Movie.CHILDRENS;
-        int result = instance.getPriceCode();
-        assertEquals(expResult, result);
-        
-        int arg = Movie.NEW_RELEASE;
-        instance.setPriceCode(arg);
-        assertEquals(arg, instance.getPriceCode());
-        
-    }
+
     
     
     public void assertEquals(int args, int o){
