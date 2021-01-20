@@ -82,20 +82,4 @@ public class MovieRentalTest {
     }
     
     
-    /**         PILAAAAAS
-     * Para las pruebas unitarias
-     * 
-    Movie theManWhoKnewTooMuch, mulan, slumdogMillionaire;
-    @Before
-    public void setUp() {
-        theManWhoKnewTooMuch = new Movie("The Man Who Knew Too Much", Movie.REGULAR);
-        mulan = new Movie("Mulan", Movie.CHILDRENS);
-        slumdogMillionaire = new Movie("Slumdog Millionaire", Movie.NEW_RELEASE);
-    }
-    @Test
-    public void testGetPriceCode() {
-        assertEquals(Movie.REGULAR, theManWhoKnewTooMuch.getPriceCode());
-    }
-     */
-    
 }
