@@ -53,7 +53,7 @@ class Customer {
             // add frequent renter points
             frequentRenterPoints++;
 
-            // add bonus for a two day new release rental
+            // add bonus for a two days new release rental
             if ((mov.getMovie().getPriceCode() == Movie.NEW_RELEASE)
                     && mov.getDaysRented() > 1) frequentRenterPoints++;
 
