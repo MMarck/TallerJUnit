@@ -77,7 +77,7 @@ public class MovieRentalTest {
         MovieRental instance = new MovieRental(movie,dias);
         int result = instance.getPriceCode();
         //Prueba
-        assertEquals(Movie.NEW_RELEASE, result);
+        assertEquals(movie.getPriceCode(), result);
 
     }
     
