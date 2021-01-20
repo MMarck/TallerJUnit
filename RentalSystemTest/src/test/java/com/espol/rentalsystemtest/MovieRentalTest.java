@@ -65,5 +65,20 @@ public class MovieRentalTest {
         assertEquals(movie, result);
 
     }
+
+    /**
+     * Test of getPriceCode method, of class MovieRental.
+     */
+    @Test
+    public void testGetPriceCode() {
+       //Creación de instancias
+        int dias=3;
+        Movie movie=new Movie("DragonBall",Movie.NEW_RELEASE);
+        MovieRental instance = new MovieRental(movie,dias);
+        int result = instance.getPriceCode();
+        //Prueba
+        assertEquals(Movie.NEW_RELEASE, result);
+
+    }
     
 }

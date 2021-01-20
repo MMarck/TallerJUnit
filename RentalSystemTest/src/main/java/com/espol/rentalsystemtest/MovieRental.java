@@ -17,6 +17,10 @@ class MovieRental {
     public Movie getMovie() {
         return _movie;
     }
+    
+    public int getPriceCode(){
+        return _movie.getPriceCode();
+    }
     /**
      * Para las pruebas unitarias
      * 
