@@ -171,12 +171,34 @@ public class CustomerTest {
     }   
     
     
-    /*
+    
     @Test
     public void testStatementRegularMovieOnly() {
         // regular movies cost $2.00 for the first 2 days, and $1.50/day thereafter
         // a rental earns 1 frequent-renter point no matter how many days
         Customer johnDoe = new Customer("John Doe");
+        Movie peliculaRegular = new Movie("Una pelicula irregular", Movie.REGULAR);
+        johnDoe.addMovieRental(new MovieRental(peliculaRegular, 1));
+        assertEquals("Rental Record for John Doe\n" +
+                     "\tUna pelicula irregular\t2.0\n" +
+                     "Amount owed is 2.0\n" +
+                     "You earned 1 frequent renter points",
+                johnDoe.statement());
+        johnDoe.addMovieRental(new MovieRental(peliculaRegular, 2));
+        assertEquals("Rental Record for John Doe\n" +
+                     "\tUna pelicula irregular\t2.0\n" +
+                     "\tUna pelicula irregular\t2.0\n" +
+                     "Amount owed is 4.0\n" +
+                     "You earned 2 frequent renter points",
+           johnDoe.statement());
+        johnDoe.addMovieRental(new MovieRental(peliculaRegular, 3));
+        assertEquals("Rental Record for John Doe\n" +
+	                 "\tUna pelicula irregular\t2.0\n" +
+	                 "\tUna pelicula irregular\t2.0\n" +
+	                 "\tUna pelicula irregular\t3.5\n" +
+	                 "Amount owed is 7.5\n" +
+	                 "You earned 3 frequent renter points",
+	      johnDoe.statement());
     }
 
     @Test
@@ -184,6 +206,28 @@ public class CustomerTest {
         // childrens' movies cost $1.50 for the first 3 days, and $1.25/day thereafter
         // a rental earns 1 frequent-renter point no matter how many days
         Customer johnDoeJr = new Customer("Johnny Doe, Jr.");
+        Movie peliculaChilden = new Movie("Free Fire la pelicula", Movie.CHILDRENS);
+        johnDoeJr.addMovieRental(new MovieRental(peliculaChilden, 1));
+        assertEquals("Rental Record for Johnny Doe, Jr.\n" +
+                     "\tFree Fire la pelicula\t1.5\n" +
+                     "Amount owed is 1.5\n" +
+                     "You earned 1 frequent renter points",
+                johnDoeJr.statement());
+        johnDoeJr.addMovieRental(new MovieRental(peliculaChilden, 3));
+        assertEquals("Rental Record for Johnny Doe, Jr.\n" +
+                     "\tFree Fire la pelicula\t1.5\n" +
+                     "\tFree Fire la pelicula\t1.5\n" +
+                     "Amount owed is 3.0\n" +
+                     "You earned 2 frequent renter points",
+           johnDoeJr.statement());
+        johnDoeJr.addMovieRental(new MovieRental(peliculaChilden, 4));
+        assertEquals("Rental Record for Johnny Doe, Jr.\n" +
+	                 "\tFree Fire la pelicula\t1.5\n" +
+	                 "\tFree Fire la pelicula\t1.5\n" +
+	                 "\tFree Fire la pelicula\t2.75\n" +
+	                 "Amount owed is 5.75\n" +
+	                 "You earned 3 frequent renter points",
+	      johnDoeJr.statement());
     }
 
     @Test
@@ -191,8 +235,29 @@ public class CustomerTest {
         // new releases cost $3.00/day
         // a rental earns 1 frequent-renter point 1 day; 2 points for 2 or more days
         Customer janeDoe = new Customer("Jane Doe");
+        Movie peliculaNew_Release = new Movie("Fast and Furious 17", Movie.NEW_RELEASE);
+        janeDoe.addMovieRental(new MovieRental(peliculaNew_Release, 1));
+        assertEquals("Rental Record for Jane Doe\n" +
+                     "\tFast and Furious 17\t3.0\n" +
+                     "Amount owed is 3.0\n" +
+                     "You earned 1 frequent renter points",
+                janeDoe.statement());
+        janeDoe.addMovieRental(new MovieRental(peliculaNew_Release, 2));
+        assertEquals("Rental Record for Jane Doe\n" +
+                     "\tFast and Furious 17\t3.0\n" +
+                     "\tFast and Furious 17\t6.0\n" +
+                     "Amount owed is 9.0\n" +
+                     "You earned 3 frequent renter points",
+           janeDoe.statement());
+        janeDoe.addMovieRental(new MovieRental(peliculaNew_Release, 3));
+        assertEquals("Rental Record for Jane Doe\n" +
+	                 "\tFast and Furious 17\t3.0\n" +
+	                 "\tFast and Furious 17\t6.0\n" +
+	                 "\tFast and Furious 17\t9.0\n" +
+	                 "Amount owed is 18.0\n" +
+	                 "You earned 5 frequent renter points",
+	      janeDoe.statement());
     }
-    */
     
     /**
      * Test of getMovieRentals method, of class Customer.
