@@ -42,10 +42,11 @@ public class MovieTest {
      */
     @Test
     public void testGetPriceCode() {
-        System.out.println("getPriceCode");
+        //Creación de instancias para la prueba
         Movie instance = new Movie("Over the moon", Movie.CHILDRENS);
         int expResult = Movie.CHILDRENS;
         int result = instance.getPriceCode();
+        //Prueba
         assertEquals(expResult, result);
     }
 
@@ -54,19 +55,13 @@ public class MovieTest {
      */
     @Test
     public void testSetPriceCode() {
-        System.out.println("setPriceCode");
+        //Creación de instancias para la prueba
         int arg = Movie.NEW_RELEASE;
         Movie instance = new Movie("Lo que sea", Movie.REGULAR);
         instance.setPriceCode(arg);
+        //Prueba
         assertEquals(arg, instance.getPriceCode());
     }
-
-    
-    
-    public void assertEquals(int args, int o){
-        
-    }
-    
     
 }
 

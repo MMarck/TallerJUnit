@@ -42,13 +42,13 @@ public class MovieRentalTest {
      */
     @Test
     public void testGetDaysRented() {
-        System.out.println("getDaysRented");
-        MovieRental instance = null;
-        int expResult = 0;
+        //Creación de instancias
+        int dias=3;
+        Movie movie=new Movie("DragonBall",Movie.NEW_RELEASE);
+        MovieRental instance = new MovieRental(movie,dias);
         int result = instance.getDaysRented();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //Prueba
+        assertEquals(dias, result);
     }
 
     /**
@@ -56,13 +56,14 @@ public class MovieRentalTest {
      */
     @Test
     public void testGetMovie() {
-        System.out.println("getMovie");
-        MovieRental instance = null;
-        Movie expResult = null;
+        //Creación de instancias
+        int dias=3;
+        Movie movie=new Movie("DragonBall",Movie.NEW_RELEASE);
+        MovieRental instance = new MovieRental(movie,dias);
         Movie result = instance.getMovie();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //Prueba
+        assertEquals(movie, result);
+
     }
     
 }
